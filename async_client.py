@@ -3,6 +3,13 @@ import asyncio
 import json
 
 
+"""
+    Пример запроса
+    {
+        "client_id": "1",
+        "tariff_id": "1"
+    }
+"""
 async def fetch(session, url):
     data = {
         "client_id": "1",
@@ -10,7 +17,7 @@ async def fetch(session, url):
     }
     async with session.post(url, data=json.dumps(data)) as response:
         return await response.text()
-    """
+"""
     Пример ответа
     {
     "id": 6,
@@ -30,7 +37,7 @@ async def fetch(session, url):
         "email": "Sincere@april.biz"
     }
     }
-    """
+"""
 
 
 async def main():
